@@ -18,7 +18,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 
 func about(w http.ResponseWriter, r *http.Request) {
 
-  fmt.Fprintf(w, "Hi, this is Docker Dewiweb!")
+  fmt.Fprintf(w, "Hi, this is Docker Dewaweb!")
 
 }
 
