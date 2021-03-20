@@ -11,7 +11,7 @@ import (
 
 func index(w http.ResponseWriter, r *http.Request) {
 
-  fmt.Fprintf(w, "Hi, this is Docker Dewa 19!")
+  fmt.Fprintf(w, "Hai")
 
 }
 
