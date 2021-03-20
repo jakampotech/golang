@@ -1,0 +1,25 @@
+name: CD-GO
+
+on:
+  push:
+    branches: [ master ]
+    
+  workflow_dispatch:
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        script: |
+          cd /home/ubuntu/golang/
+          git pull origin master
+          sudo docker stop appgo
+          sudo docker rm appgo
+          sudo docker build -t appgo:1.0 .
+          sudo docker run -d --name appgo -p 8000:8000 appgo:1.0
