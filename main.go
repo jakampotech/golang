@@ -11,7 +11,7 @@ import (
 
 func index(w http.ResponseWriter, r *http.Request) {
 
-  fmt.Fprintf(w, "Hai apa kabar kamu disana?")
+  fmt.Fprintf(w, "Hai I miss you :)")
 
 }
 
